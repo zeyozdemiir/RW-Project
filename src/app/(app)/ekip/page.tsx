@@ -78,7 +78,7 @@ export default async function TeamPage({ searchParams }: { searchParams: Promise
           </header>
           <ul className="divide-y divide-ivory-200">
             {pending.map((m) => (
-              <li key={m.id} className="grid gap-4 px-5 py-5 sm:px-6 lg:grid-cols-[minmax(0,18rem)_minmax(0,1fr)]">
+              <li key={m.id} className="grid grid-cols-1 gap-4 px-5 py-5 sm:px-6 lg:grid-cols-[minmax(0,18rem)_minmax(0,1fr)]">
                 <div className="flex items-start gap-3">
                   <Avatar name={m.name} />
                   <div className="min-w-0">

@@ -135,7 +135,7 @@ export default async function PortfoliosPage({ searchParams }: { searchParams: P
       </div>
 
       {/* Arama ve danışman / ekip filtresi */}
-      <form method="get" action="/portfoyler" className="card mb-6 grid gap-3 p-3 sm:grid-cols-[minmax(0,1fr)_13rem_11rem_auto] sm:p-4">
+      <form method="get" action="/portfoyler" className="card mb-6 grid grid-cols-1 gap-3 p-3 sm:grid-cols-[minmax(0,1fr)_13rem_11rem_auto] sm:p-4">
         {typeKey ? <input type="hidden" name="tur" value={typeKey} /> : null}
         {param(sp, "durum") ? <input type="hidden" name="durum" value={statusKey} /> : null}
         <div className="relative">
@@ -199,7 +199,7 @@ export default async function PortfoliosPage({ searchParams }: { searchParams: P
       ) : (
         <>
           <p className="mb-3 text-sm text-ink-500">{list.total} portföy</p>
-          <ul className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
             {list.rows.map((p) => (
               <li key={p.id}>
                 <PortfolioCard p={p} mine={p.agentId === viewer.id} />

@@ -91,7 +91,7 @@ export default async function EarningsPage({ searchParams }: { searchParams: Pro
         <span className="ml-1 text-sm text-ink-500">{range.label}</span>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <StatTile
           accent
           label={manager ? "Ofis cirosu" : leader ? "Ekip cirosu" : "Ciro payınız"}

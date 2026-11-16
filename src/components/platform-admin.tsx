@@ -57,7 +57,7 @@ function CreateOfficeDialog({ onClose }: { onClose: () => void }) {
           hint="Birden fazla uzantı varsa virgülle ayırın. Gmail gibi kişisel sağlayıcılar kullanılamaz."
           error={errors.domains}
         />
-        <div className="grid gap-5 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
           <TextField label="Üst yöneticinin adı" name="managerName" error={errors.managerName} />
           <TextField
             label="Üst yöneticinin e-postası"

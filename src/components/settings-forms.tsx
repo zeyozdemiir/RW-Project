@@ -10,7 +10,7 @@ export function ProfileForm({ name, phone, email }: { name: string; phone: strin
   return (
     <form onSubmit={onSubmit} className="space-y-5">
       <FormMessage state={state} />
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <TextField label="Ad Soyad" name="name" defaultValue={name} autoComplete="name" error={errors.name} />
         <TextField
           label="Telefon"
@@ -51,7 +51,7 @@ export function PasswordForm() {
         autoComplete="current-password"
         error={errors.currentPassword}
       />
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <TextField
           label="Yeni şifre"
           name="newPassword"
@@ -89,7 +89,7 @@ export function OfficeSettingsForm({
     <form onSubmit={onSubmit} className="space-y-5">
       <FormMessage state={state} />
       <TextField label="Ofis adı" name="name" defaultValue={name} error={errors.name} maxLength={120} />
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <TextField
           label="Danışman payı (%)"
           name="agentRatePct"

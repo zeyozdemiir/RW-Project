@@ -36,7 +36,7 @@ function Section({ title, description, children }: { title: string; description?
     <section className="card p-5 sm:p-7">
       <h2 className="font-display text-[1.375rem] leading-tight text-ink-900">{title}</h2>
       {description ? <p className="mt-1 text-sm text-ink-500">{description}</p> : null}
-      <div className="mt-5 grid gap-5 sm:grid-cols-6">{children}</div>
+      <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-6">{children}</div>
     </section>
   );
 }

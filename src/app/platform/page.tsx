@@ -23,7 +23,7 @@ export default async function PlatformPage() {
         actions={<CreateOfficeButton />}
       />
 
-      <div className="mb-8 grid gap-4 sm:grid-cols-3">
+      <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
         <StatTile accent label="Aktif ofis" value={activeOffices} hint={`${offices.length} ofis kayıtlı`} />
         <StatTile label="Aktif kullanıcı" value={totalUsers} hint="Tüm ofislerde" />
         <StatTile label="Portföy" value={offices.reduce((sum, o) => sum + o.portfolios, 0)} hint="Tüm ofislerde" />
@@ -53,7 +53,7 @@ export default async function PlatformPage() {
                 <OfficeActiveToggle officeId={o.office.id} officeName={o.office.name} active={o.office.isActive} />
               </header>
 
-              <div className="grid gap-6 p-5 sm:p-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+              <div className="grid grid-cols-1 gap-6 p-5 sm:p-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
                 <div>
                   <p className="eyebrow mb-3">E-posta uzantıları</p>
                   <DomainChips officeId={o.office.id} domains={o.domains} />

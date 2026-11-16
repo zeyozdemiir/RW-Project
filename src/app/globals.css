@@ -85,7 +85,7 @@
   }
 
   .card {
-    @apply rounded-2xl border border-ivory-300/80 bg-white shadow-card;
+    @apply min-w-0 rounded-2xl border border-ivory-300/80 bg-white shadow-card;
   }
 
   .btn {

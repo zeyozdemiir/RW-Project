@@ -101,7 +101,7 @@ function AlertCard({ alert, agents }: { alert: AlertRow; agents: Array<{ id: str
         </Link>
       </header>
 
-      <div className="grid gap-6 p-5 sm:p-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+      <div className="grid grid-cols-1 gap-6 p-5 sm:p-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
         <div>
           <p className="eyebrow">Kontratta yazan daire</p>
           <p className="mt-2 font-display text-2xl leading-tight text-ink-950">{unitLabel(d)}</p>

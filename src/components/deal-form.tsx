@@ -260,7 +260,7 @@ export function DealForm({
                 Bu daire sistemde kayıtlı bir portföyle eşleşirse kontrat o portföye bağlanır. Eşleşmezse kontrat yine
                 kaydedilir ve üst yönetime “kayıtsız portföy” uyarısı gönderilir.
               </Notice>
-              <div className="mt-5 grid gap-5 sm:grid-cols-6">
+              <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-6">
                 <TextField
                   className="sm:col-span-6"
                   label="Site / bina / sokak adı"
@@ -288,7 +288,7 @@ export function DealForm({
 
       <section className="card p-5 sm:p-7">
         <h2 className="font-display text-[1.375rem] leading-tight text-ink-900">3. Kontrat bilgileri</h2>
-        <div className="mt-5 grid gap-5 sm:grid-cols-6">
+        <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-6">
           <TextField
             className="sm:col-span-2"
             label="Kontrat tarihi"

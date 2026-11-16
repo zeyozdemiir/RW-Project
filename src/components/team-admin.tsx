@@ -84,7 +84,7 @@ export function ApprovalForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4">
       <FormMessage state={state} />
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         <RoleTeamFields
           teams={teams}
           defaults={{ role: "agent", teamId: "", agentRatePct: "" }}

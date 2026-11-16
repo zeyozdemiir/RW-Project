@@ -160,7 +160,7 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
         <span className="ml-1 text-sm text-ink-500">{range.label}</span>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <StatTile
           accent
           label={manager ? "Ofis cirosu" : leader ? "Ekip cirosu" : "Ciro payınız"}
@@ -192,7 +192,7 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
         />
       </div>
 
-      <div className="mt-6 grid gap-6 xl:grid-cols-3">
+      <div className="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-3">
         <Card className="xl:col-span-2">
           <CardHeader
             title="Aylık ciro"
@@ -237,7 +237,7 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
         </Card>
       </div>
 
-      <div className="mt-6 grid gap-6 xl:grid-cols-2">
+      <div className="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-2">
         <Card>
           <CardHeader
             title="Çapraz işlemler"
@@ -312,7 +312,7 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
       </div>
 
       {manager || leader ? (
-        <div className="mt-6 grid gap-6 xl:grid-cols-2">
+        <div className="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-2">
           <Card>
             <CardHeader title="Öne çıkan danışmanlar" description={`Ciro payına göre · ${range.label}`} />
             {topAgents.length === 0 ? (
