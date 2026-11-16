@@ -15,11 +15,17 @@ function createPool(): Pool {
     throw new Error("DATABASE_URL tanımlı değil. .env dosyasını kontrol edin.");
   }
   const useSsl = process.env.DATABASE_SSL === "true";
-  return new Pool({
+  const pool = new Pool({
     connectionString: url,
     max: Number(process.env.DATABASE_POOL_MAX ?? 10),
     ssl: useSsl ? { rejectUnauthorized: true } : undefined,
   });
+  // Boşta bekleyen bir bağlantı koparsa (veritabanı yeniden başlatıldı, ağ kesildi)
+  // sunucu çökmesin; havuz bir sonraki sorguda yeni bağlantı açar.
+  pool.on("error", (err) => {
+    console.error("[veritabanı] Boştaki bağlantı koptu:", err.message);
+  });
+  return pool;
 }
 
 export function getPool(): Pool {
