@@ -199,7 +199,7 @@ export default async function PortfoliosPage({ searchParams }: { searchParams: P
       ) : (
         <>
           <p className="mb-3 text-sm text-ink-500">{list.total} portföy</p>
-          <ul className="grid gap-4 md:grid-cols-2 2xl:grid-cols-3">
+          <ul className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {list.rows.map((p) => (
               <li key={p.id}>
                 <PortfolioCard p={p} mine={p.agentId === viewer.id} />

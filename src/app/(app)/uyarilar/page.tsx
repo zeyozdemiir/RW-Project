@@ -150,6 +150,7 @@ function AlertCard({ alert, agents }: { alert: AlertRow; agents: Array<{ id: str
                         <div className="flex flex-wrap items-center gap-1.5">
                           <ListingBadge type={c.listingType} />
                           <StatusBadge status={c.status} />
+                          {c.sameUnit ? <Badge tone="gold">Aynı daire no</Badge> : null}
                         </div>
                         <Link href={`/portfoyler/${c.id}`} className="mt-1.5 block truncate text-sm font-semibold text-ink-950 hover:underline">
                           #{c.refNo} · {unitLabel(c)}

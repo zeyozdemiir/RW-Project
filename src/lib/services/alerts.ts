@@ -39,6 +39,8 @@ export type AlertCandidate = {
   unitNo: string;
   district: string;
   agentName: string;
+  /** Kontrattaki daire / kapı numarasıyla aynı mı. */
+  sameUnit: boolean;
   /** Bu kontrata doğrudan bağlanabilir mi (tür uyumlu ve kapatılmamış). */
   linkable: boolean;
 };
@@ -120,7 +122,7 @@ async function findCandidates(
     .orderBy(desc(sql`${unitCol} = ${unitKey}`), desc(portfolios.createdAt))
     .limit(6);
 
-  return rows.map(({ sameUnit: _sameUnit, ...r }) => ({
+  return rows.map((r) => ({
     ...r,
     linkable: r.listingType === deal.type && r.status !== "rented" && r.status !== "sold",
   }));

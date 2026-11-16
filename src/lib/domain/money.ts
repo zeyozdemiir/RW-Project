@@ -13,7 +13,7 @@ const tlCents = new Intl.NumberFormat("tr-TR", {
 });
 const compact = new Intl.NumberFormat("tr-TR", {
   notation: "compact",
-  maximumFractionDigits: 1,
+  maximumFractionDigits: 2,
 });
 
 export function formatTL(kurus: number | null | undefined): string {

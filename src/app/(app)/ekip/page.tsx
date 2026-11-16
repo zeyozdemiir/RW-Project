@@ -273,7 +273,7 @@ function MemberLine({
       </div>
 
       {stats.length > 0 ? (
-        <dl className="grid grid-cols-4 gap-x-5 text-right text-sm sm:gap-x-7">
+        <dl className="grid grid-cols-[3.25rem_3.75rem_3.25rem_6.5rem] gap-x-3 text-right text-sm sm:gap-x-5">
           {stats.map((st) => (
             <div key={st.label}>
               <dt className="text-[0.6875rem] font-medium tracking-wide text-ink-400 uppercase">{st.label}</dt>

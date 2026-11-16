@@ -262,7 +262,12 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
                           <ArrowLeftRight className="size-3" aria-hidden />
                           Ekipler arası
                         </span>
-                      ) : null}
+                      ) : (
+                        <span className="inline-flex items-center gap-1 rounded-full bg-sky-50 px-2.5 py-1 text-xs font-medium text-sky-800 ring-1 ring-sky-200 ring-inset">
+                          <ArrowLeftRight className="size-3" aria-hidden />
+                          Ekip içi
+                        </span>
+                      )}
                       <span className="ml-auto text-xs text-ink-500">{formatDateISO(d.contractDate)}</span>
                     </div>
                     <p className="mt-2 text-sm font-medium text-ink-900">{unitLabel(d)}</p>
