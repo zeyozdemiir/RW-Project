@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { SESSION_COOKIE } from "@/lib/config";
 
-const PUBLIC_PATHS = ["/giris", "/kayit"];
+const PUBLIC_PATHS = ["/giris", "/kayit", "/api/saglik"];
 
 /**
  * Hızlı ön kontrol: oturum çerezi olmayan istekleri giriş sayfasına yollar.

@@ -9,10 +9,14 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
-  output: "standalone",
+  // Docker imajı için küçük, kendi başına çalışan çıktı (bkz. Dockerfile).
+  // Diğer barındırma hizmetlerinde standart `npm run start` kullanılır.
+  output: process.env.BUILD_STANDALONE === "true" ? "standalone" : undefined,
   poweredByHeader: false,
   devIndicators: false,
   serverExternalPackages: ["pg"],
+  // Açılışta uygulanan veritabanı migrasyonları derleme çıktısına dahil edilsin.
+  outputFileTracingIncludes: { "/**": ["./drizzle/**/*"] },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
