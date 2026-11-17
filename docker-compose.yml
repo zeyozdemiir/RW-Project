@@ -1,0 +1,39 @@
+# Kendi sunucunuzda çalıştırmak için: uygulama + PostgreSQL.
+#   1) .env.example dosyasını .env olarak kopyalayıp şifreleri değiştirin
+#   2) docker compose up -d --build
+# Veriler "pgdata" adlı kalıcı birimde saklanır; kapsayıcılar silinse de kaybolmaz.
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: anahtar
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD tanimli degil}
+      POSTGRES_DB: anahtar
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U anahtar -d anahtar"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  app:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://anahtar:${POSTGRES_PASSWORD}@db:5432/anahtar
+      DATABASE_SSL: "false"
+      PLATFORM_ADMIN_EMAIL: ${PLATFORM_ADMIN_EMAIL}
+      PLATFORM_ADMIN_PASSWORD: ${PLATFORM_ADMIN_PASSWORD}
+      PLATFORM_ADMIN_NAME: ${PLATFORM_ADMIN_NAME:-Platform Yöneticisi}
+      # Uygulamayı HTTPS arkasında yayınlayın. Yalnızca yerel denemede (http) "false" yapın.
+      COOKIE_SECURE: ${COOKIE_SECURE:-true}
+    ports:
+      - "3000:3000"
+
+volumes:
+  pgdata:
